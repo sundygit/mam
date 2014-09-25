@@ -13,15 +13,6 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
-});
-
-
-//添加一条新记录
-Route::get('/add', function(){
-	$resource = new Resource;
-	$resource->name = '测试数据';
-	$resource->save();
-
-	//return View::make('add');
+	$items = array(2,12,34,556,'something');
+	return View::make('home.index')->with('items',$items);
 });
